@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import Project from "../pages/Project";
 import About from "../pages/About";
+import Skills from "../pages/Skills";
 import NotFound from "../pages/NotFound";
 import MainLayout from "../layouts/MainLayout";
 
@@ -13,6 +14,7 @@ function Router() {
           <Route path="/" element={<Home />} />
           <Route path="/project/:id" element={<Project />} />
           <Route path="/about" element={<About />} />
+          <Route path="/skills" element={<Skills />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

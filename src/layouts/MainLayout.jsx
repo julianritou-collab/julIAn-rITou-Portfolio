@@ -6,7 +6,7 @@ function MainLayout() {
   return (
     <>
       <Header />
-      <main>
+      <main className="container main__inner" id="main-content">
         <Outlet />
       </main>
       <Footer />
