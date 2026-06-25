@@ -1,7 +1,7 @@
 @use '../base/variables' as *;
 
 .header {
-  
+
   &__inner {
     background-color: $secondary-background-color;
     display: flex;
@@ -20,12 +20,16 @@
   &__logo-text {
     font-family: $title-font-family;
     font-size: 30px;
-    padding-right: 10px;
+    padding: 0 10px;
     transition: font-size $anim-duration ease-in-out;
     @media (max-width: $mobile) {
-      font-size: 24px;
+      font-size: 22px;
     }
     color: $text-color;
+    strong {
+      font-weight: normal;
+      color: $primary-line-color;
+    }
   }
 
   &__logo {

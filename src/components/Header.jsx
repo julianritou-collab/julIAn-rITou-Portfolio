@@ -32,7 +32,7 @@ function Header() {
       <div className="container header__inner">
         <div className="header__logo-container">
           <img src={logo} alt="logo rock'n'roll de julIAn rITou Team" className="header__logo" />
-          <p className="header__logo-text">julIAn rITou Team</p>
+          <p className="header__logo-text">jul<strong>IA</strong>n r<strong>IT</strong>ou <strong>Team</strong></p>
         </div>
 
         <button
