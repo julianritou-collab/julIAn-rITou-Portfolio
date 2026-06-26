@@ -109,7 +109,7 @@ function ContactModal({ open, onOpenChange, onCloseAutoFocus }) {
                 >
                 <Dialog.Title className="contact-modal__title">Me contacter</Dialog.Title>
                 <p id="contact-desc" className="contact-modal__description">
-                    Contacter moi directement par un message, je vous réponds rapidement!
+                    Contactez-moi directement par un message, je vous réponds rapidement!
                 </p>
                 <form onSubmit={onSubmit} className="contact-modal__form" noValidate>
                 <div className="contact-modal__field-group">
