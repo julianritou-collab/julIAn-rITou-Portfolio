@@ -1,5 +1,5 @@
 import Button from './Button';
-import logo from "../assets/logos/logo-transparent.png";
+import linkedin from "../assets/logos/InBug-White.png";
 
 function Footer() {
   const handleContactClick = () => {
@@ -10,15 +10,18 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="container footer__inner">
-        <img src={logo} alt="logo rock'n'roll de julIAn rITou Team" className="footer__logo" />
-        <Button 
+        <a href="https://www.linkedin.com/in/julian-ritou-203416202" className="footer__linkedin-link" target="_blank"
+            rel="noreferrer noopener" aria-label="Aller sur mon profil LinkedIn" >
+            <img src={linkedin} alt="" className="footer__logo" />
+        </a>
+        <Button
           variant="primary" 
           size="large" 
           onClick={handleContactClick}
         >
           Me contacter
         </Button>
-        <p className="footer__text">2026 julIAn rITou Team.</p>
+        <p className="footer__text">2026 - Julian RITOU</p>
       </div>
     </footer>
   );

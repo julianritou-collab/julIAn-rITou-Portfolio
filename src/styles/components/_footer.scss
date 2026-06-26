@@ -3,7 +3,7 @@
 .footer {
 
   &__inner {
-    padding: 20px 20px;
+    padding: 20px 50px;
     background-color: $secondary-background-color;
     display: grid;
     grid-template-columns: 1fr auto 1fr;
@@ -24,14 +24,22 @@
     }
   }
 
-  &__logo {
-    max-height: 40px;
-    filter: brightness(0) invert(1);
-    justify-self: start;
-
+  &__linkedin-link {
+    display: inline-flex;
+    border-radius: 4px;
+    justify-self: start;  
+    &:focus-visible {
+      outline: 3px solid $primary-line-color;
+      outline-offset: 6px;
+    }
     @media (max-width: $mobile) {
       justify-self: center;
     }
+  }
+
+  &__logo {
+    max-height: 54px;
+    justify-self: start;
   }
 
   &__text {

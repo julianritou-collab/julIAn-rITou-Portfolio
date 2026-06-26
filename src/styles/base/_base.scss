@@ -28,6 +28,7 @@ main {
   margin: 0 auto;
   padding: 0 $container-padding;
   transition: padding $anim-duration ease-in-out;
+  box-shadow: 20px 0 25px -20px rgba(0, 0, 0, 0.35), -20px 0 25px -20px rgba(0, 0, 0, 0.35);
 
   @media (max-width: $mobile) {
     padding: 0 $container-padding-mobile;
