@@ -1,0 +1,25 @@
+@use "../base/variables" as *;
+
+.contact-modal__overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.62);
+    z-index: 1000;
+}
+
+.contact-modal__content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(92vw, 640px);
+    max-height: 90vh;
+    overflow: auto;
+    background: $secondary-background-color;
+    color: $text-color;
+    border: 2px solid $primary-line-color;
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 1001;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55);
+}

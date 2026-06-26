@@ -1,10 +1,11 @@
 import Button from './Button';
 import linkedin from "../assets/logos/InBug-White.png";
 
-function Footer() {
+function Footer({ onOpenContact }) {
   const handleContactClick = () => {
-    // TODO: Ajouter logique de contact (email, formulaire, etc.)
-    console.log('Contact clicked');
+    if (onOpenContact) {
+      onOpenContact();
+    }
   };
 
   return (
