@@ -1,11 +1,22 @@
 import Button from './Button';
 import linkedin from "../assets/logos/InBug-White.png";
+import { useRef } from 'react';
 
 function Footer({ onOpenContact }) {
-  const handleContactClick = () => {
+  const wasFocusedBeforePointerRef = useRef(false);
+
+  const handleContactMouseDownCapture = (event) => {
+    wasFocusedBeforePointerRef.current = document.activeElement === event.currentTarget;
+  };
+
+  const handleContactClick = (event) => {
     if (onOpenContact) {
-      onOpenContact();
+      const isKeyboardActivation = event.detail === 0;
+      const shouldRestoreFocus = isKeyboardActivation || wasFocusedBeforePointerRef.current;
+      onOpenContact(event.currentTarget, shouldRestoreFocus);
     }
+
+    wasFocusedBeforePointerRef.current = false;
   };
 
   return (
@@ -18,6 +29,7 @@ function Footer({ onOpenContact }) {
         <Button
           variant="primary" 
           size="large" 
+          onMouseDownCapture={handleContactMouseDownCapture}
           onClick={handleContactClick}
         >
           Me contacter
