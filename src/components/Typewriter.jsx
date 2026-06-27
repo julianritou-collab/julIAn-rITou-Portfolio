@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function Typewriter({ text, speed = 20 }) {
+export default function Typewriter({ text, speed = 20, className = "" }) {
   const [displayedText, setDisplayedText] = useState("");
   const hasPlayed = typeof window !== "undefined" && sessionStorage.getItem("typewriterPlayed:" + text);
 
@@ -25,5 +25,5 @@ export default function Typewriter({ text, speed = 20 }) {
     return () => clearInterval(interval);
   }, [text, speed, hasPlayed]);
 
-  return <h1 style={{ whiteSpace: "pre-line" }}>{hasPlayed ? text : displayedText}</h1>;
+  return <p className={className} style={{ whiteSpace: "pre-line" }}>{hasPlayed ? text : displayedText}</p>;
 }

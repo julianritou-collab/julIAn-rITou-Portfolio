@@ -17,7 +17,6 @@
     font-weight: 500;
     font-family: $title-font-family;
     color: $primary-line-color;
-    line-height: 100%;
     transition: font-size $anim-duration ease-in-out;
 
     @media (max-width: $mobile) {
