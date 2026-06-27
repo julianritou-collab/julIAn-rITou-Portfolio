@@ -34,3 +34,11 @@ main {
     padding: 0 $container-padding-mobile;
   }
 }
+
+.newline-mobile {
+  display: inline;
+
+  @media (max-width: $mobile) {
+    display: block;
+  }
+}
