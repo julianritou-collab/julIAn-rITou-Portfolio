@@ -1,0 +1,107 @@
+@use "../base/variables" as *;
+
+.landing-banner {
+    --landing-speed: 45s;
+    --landing-height-desktop: 110px;
+    --landing-height: var(--landing-height-desktop);
+
+    position: relative;
+    overflow: hidden;
+    border: 2px solid $third-background-color;
+    border-radius: 8px;
+    background: rgba($secondary-background-color, 0.4);
+
+    &.is-paused {
+        .landing-banner__track {
+            animation-play-state: paused;
+        }
+    }
+
+    &:hover {
+        .landing-banner__track {
+            animation-play-state: paused;
+        }
+    }
+
+    @media (max-width: $mobile) {
+        --landing-height: calc(var(--landing-height-desktop) * 0.75);
+    }
+
+    &__track {
+        display: flex;
+        gap: 0;
+        align-items: stretch;
+        line-height: 0;
+        font-size: 0;
+        width: max-content;
+        will-change: transform;
+        animation: landing-scroll var(--landing-speed) linear infinite;
+    }
+
+    &__viewport {
+        overflow: hidden;
+    }
+
+    &__image {
+        height: var(--landing-height);
+        width: auto;
+        flex: 0 0 auto;
+        display: block;
+        margin-right: -1px;
+        image-rendering: pixelated;
+    }
+
+    &__fallback {
+        margin: 0;
+        padding: 10px 14px;
+        color: $text-color;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    &__toggle {
+        position: absolute;
+        bottom: 8px;
+        left: 8px;
+        z-index: 2;
+        border: 1px solid rgba($text-color, 0.6);
+        border-radius: 6px;
+        background: rgba($secondary-background-color, 0.85);
+        color: $text-color;
+        font-family: $font-family;
+        font-size: 14px;
+        line-height: 1;
+        padding: 8px 10px;
+        cursor: pointer;
+        transition: border-color $anim-duration ease, background-color $anim-duration ease;
+
+        &:hover {
+            border-color: $secondary-line-color;
+        }
+
+        &:focus-visible {
+            outline: 2px solid $secondary-line-color;
+            outline-offset: 2px;
+        }
+        @media (max-width: $mobile) {
+            font-size: 12px;
+            padding: 6px 8px;
+        }
+    }
+}
+
+@keyframes landing-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .landing-banner__track {
+        animation: none;
+    }
+}

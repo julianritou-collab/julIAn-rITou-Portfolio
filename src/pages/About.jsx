@@ -1,9 +1,12 @@
 import TypeWriter from "../components/Typewriter";
+import LandingBanner from "../components/LandingBanner";
 
 
 function About() {
-  //return <h1>À propos</h1>;
-  return <TypeWriter text={`En 2001, un développeur fut condamné à résoudre des bugs que personne ne voulait toucher.
+  return (
+    <>
+      <LandingBanner speed={45}height={110} />
+      <TypeWriter text={`En 2001, un développeur fut condamné à résoudre des bugs que personne ne voulait toucher.
                             Aujourd’hui, recherché par les startups pour ses compétences improbables,
                             il survit en acceptant les missions que les autres considèrent comme impossibles:
 
@@ -14,7 +17,9 @@ function About() {
                             Votre développeur senior a mystérieusement disparu au moment du déploiement ?
                             Votre chasseur de têtes cherche une licorne capable de faire du front, du back, de l’infra, de l’IA… avec le budget d’un stagiaire ?
 
-                            Si vous avez un problème, si personne d’autre ne peut vous aider, Il ne vous reste qu’une seule solution`} />;
+                            Si vous avez un problème, si personne d’autre ne peut vous aider, Il ne vous reste qu’une seule solution`} />
+    </>
+  );
 }
 
 export default About;
