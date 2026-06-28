@@ -1,4 +1,4 @@
-@use "../base/variables" as *;
+@use '../base/variables' as *;
 
 .about {
     display: grid;
@@ -25,7 +25,7 @@
         display: grid;
         gap: 18px;
         grid-template-columns: 2fr 2fr 1fr;
-        grid-template-areas: "me training hobbies";
+        grid-template-areas: 'me training hobbies';
     }
 
     &__section {
@@ -59,7 +59,7 @@
         text-align: left;
         @media (max-width: $mobile) {
             font-size: 22px;
-        }   
+        }
     }
 
     &__me-text {
@@ -68,10 +68,10 @@
         font-size: 18px;
         & strong {
             color: $primary-line-color;
-        }  
-         @media (max-width: $mobile) {
+        }
+        @media (max-width: $mobile) {
             font-size: 16px;
-        }    
+        }
     }
 
     @media (max-width: $mobile) {
@@ -82,9 +82,9 @@
         &__content {
             grid-template-columns: 1fr;
             grid-template-areas:
-                "me"
-                "training"
-                "hobbies";
+                'me'
+                'training'
+                'hobbies';
         }
     }
 
@@ -92,8 +92,8 @@
         &__content {
             grid-template-columns: 2fr 1fr;
             grid-template-areas:
-                "me hobbies"
-                "training training";
+                'me hobbies'
+                'training training';
         }
     }
 }

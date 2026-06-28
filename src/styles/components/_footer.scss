@@ -1,7 +1,6 @@
 @use '../base/variables' as *;
 
 .footer {
-
     &__inner {
         padding: 20px 50px;
         background-color: $secondary-background-color;
@@ -13,27 +12,27 @@
         //box-shadow: 0 -10px 35px rgba(0, 0, 0, 0.55);
 
         .btn {
-        justify-self: center;
+            justify-self: center;
         }
 
         @media (max-width: $mobile) {
-        grid-template-columns: 1fr;
-        row-gap: 14px;
-        column-gap: 0;
-        justify-items: center;
+            grid-template-columns: 1fr;
+            row-gap: 14px;
+            column-gap: 0;
+            justify-items: center;
         }
     }
 
     &__linkedin-link {
         display: inline-flex;
         border-radius: 4px;
-        justify-self: start;  
+        justify-self: start;
         &:focus-visible {
-        outline: 3px solid $primary-line-color;
-        outline-offset: 6px;
+            outline: 3px solid $primary-line-color;
+            outline-offset: 6px;
         }
         @media (max-width: $mobile) {
-        justify-self: center;
+            justify-self: center;
         }
     }
 
@@ -50,8 +49,8 @@
         justify-self: end;
 
         @media (max-width: $mobile) {
-        justify-self: center;
-        font-size: 16px;
+            justify-self: center;
+            font-size: 16px;
         }
     }
 }

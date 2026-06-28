@@ -1,47 +1,47 @@
 [
-  {
-    "id": "oc-1",
-    "title": "Kasa",
-    "subtitle": "Application web de location d'appartements",
-    "description": "refonte du site web de location d'appartements Kasa, avec React et Sass. L'application permet aux utilisateurs de rechercher et de réserver des appartements à louer.",
-    "technologies": ["React", "Sass", "React Router"],
-    "cover": "/data/images/projects/Kasa.jpg",
-    "link": "https://kasa-hazel.vercel.app/",
-    "pictures": [
-      "/data/images/projects/Kasa.jpg",
-      "/data/images/projects/Kasa-2.jpg",
-      "/data/images/projects/Kasa-3.jpg"
-    ],
-    "spitch": ""
-  },
-  {
-    "id": "oc-12",
-    "title": "Kasa2",
-    "subtitle": "Application web de location d'appartements",
-    "description": "refonte du site web de location d'appartements Kasa, avec React et Sass. L'application permet aux utilisateurs de rechercher et de réserver des appartements à louer.",
-    "technologies": ["React", "Sass", "React Router"],
-    "cover": "/data/images/projects/Kasa.jpg",
-    "link": "https://kasa-hazel.vercel.app/",
-    "pictures": [
-      "/data/images/projects/Kasa.jpg",
-      "/data/images/projects/Kasa-2.jpg",
-      "/data/images/projects/Kasa-3.jpg"
-    ],
-    "spitch": ""
-  },
-  {
-    "id": "oc-3",
-    "title": "Kasa3",
-    "subtitle": "Application web de location d'appartements",
-    "description": "refonte du site web de location d'appartements Kasa, avec React et Sass. L'application permet aux utilisateurs de rechercher et de réserver des appartements à louer.",
-    "technologies": ["React", "Sass", "React Router"],
-    "cover": "/data/images/projects/Kasa.jpg",
-    "link": "https://kasa-hazel.vercel.app/",
-    "pictures": [
-      "/data/images/projects/Kasa.jpg",
-      "/data/images/projects/Kasa-2.jpg",
-      "/data/images/projects/Kasa-3.jpg"
-    ],
-    "spitch": ""
-  }
+    {
+        "id": "oc-1",
+        "title": "Kasa",
+        "subtitle": "Application web de location d'appartements",
+        "description": "refonte du site web de location d'appartements Kasa, avec React et Sass. L'application permet aux utilisateurs de rechercher et de réserver des appartements à louer.",
+        "technologies": ["React", "Sass", "React Router"],
+        "cover": "/data/images/projects/Kasa.jpg",
+        "link": "https://kasa-hazel.vercel.app/",
+        "pictures": [
+            "/data/images/projects/Kasa.jpg",
+            "/data/images/projects/Kasa-2.jpg",
+            "/data/images/projects/Kasa-3.jpg"
+        ],
+        "spitch": ""
+    },
+    {
+        "id": "oc-12",
+        "title": "Kasa2",
+        "subtitle": "Application web de location d'appartements",
+        "description": "refonte du site web de location d'appartements Kasa, avec React et Sass. L'application permet aux utilisateurs de rechercher et de réserver des appartements à louer.",
+        "technologies": ["React", "Sass", "React Router"],
+        "cover": "/data/images/projects/Kasa.jpg",
+        "link": "https://kasa-hazel.vercel.app/",
+        "pictures": [
+            "/data/images/projects/Kasa.jpg",
+            "/data/images/projects/Kasa-2.jpg",
+            "/data/images/projects/Kasa-3.jpg"
+        ],
+        "spitch": ""
+    },
+    {
+        "id": "oc-3",
+        "title": "Kasa3",
+        "subtitle": "Application web de location d'appartements",
+        "description": "refonte du site web de location d'appartements Kasa, avec React et Sass. L'application permet aux utilisateurs de rechercher et de réserver des appartements à louer.",
+        "technologies": ["React", "Sass", "React Router"],
+        "cover": "/data/images/projects/Kasa.jpg",
+        "link": "https://kasa-hazel.vercel.app/",
+        "pictures": [
+            "/data/images/projects/Kasa.jpg",
+            "/data/images/projects/Kasa-2.jpg",
+            "/data/images/projects/Kasa-3.jpg"
+        ],
+        "spitch": ""
+    }
 ]

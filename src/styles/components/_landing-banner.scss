@@ -1,4 +1,4 @@
-@use "../base/variables" as *;
+@use '../base/variables' as *;
 
 .landing-banner {
     --landing-speed: 45s;
@@ -74,7 +74,9 @@
         line-height: 1;
         padding: 8px 10px;
         cursor: pointer;
-        transition: border-color $anim-duration ease, background-color $anim-duration ease;
+        transition:
+            border-color $anim-duration ease,
+            background-color $anim-duration ease;
 
         &:hover {
             border-color: $secondary-line-color;

@@ -1,7 +1,6 @@
 @use '../base/variables' as *;
 
 .header {
-
     &__inner {
         background-color: $secondary-background-color;
         display: flex;
@@ -24,11 +23,11 @@
         padding: 0 10px;
         transition: font-size $anim-duration ease-in-out;
         @media (max-width: $mobile) {
-        font-size: 26px;
+            font-size: 26px;
         }
         color: $text-color;
         strong {
-        color: $primary-line-color;
+            color: $primary-line-color;
         }
     }
 
@@ -36,7 +35,7 @@
         max-height: 150px;
         transition: max-height $anim-duration ease-in-out;
         @media (max-width: $mobile) {
-        max-height: 100px;
+            max-height: 100px;
         }
     }
 
@@ -48,32 +47,34 @@
         cursor: pointer;
 
         &:focus-visible {
-        outline: 3px solid $primary-line-color;
-        outline-offset: 6px;
-        border-radius: 4px;
+            outline: 3px solid $primary-line-color;
+            outline-offset: 6px;
+            border-radius: 4px;
         }
 
         &-line {
-        display: block;
-        width: 32px;
-        height: 3px;
-        margin: 6px 0;
-        background: $primary-line-color;
-        transition: transform $anim-duration ease, opacity $anim-duration ease;
+            display: block;
+            width: 32px;
+            height: 3px;
+            margin: 6px 0;
+            background: $primary-line-color;
+            transition:
+                transform $anim-duration ease,
+                opacity $anim-duration ease;
         }
 
         &.is-open {
-        .header__burger-line--top {
-            transform: translateY(9px) rotate(45deg);
-        }
+            .header__burger-line--top {
+                transform: translateY(9px) rotate(45deg);
+            }
 
-        .header__burger-line--middle {
-            opacity: 0;
-        }
+            .header__burger-line--middle {
+                opacity: 0;
+            }
 
-        .header__burger-line--bottom {
-            transform: translateY(-9px) rotate(-45deg);
-        }
+            .header__burger-line--bottom {
+                transform: translateY(-9px) rotate(-45deg);
+            }
         }
     }
 
@@ -82,113 +83,115 @@
         gap: 30px;
 
         &-link {
-        font-size: 20px;
-        font-weight: 500;
-        color: $text-color;
-        text-decoration: none;
-        padding: 10px 0;
-        border-bottom: 4px solid transparent;
-        transition: color $anim-duration ease;
+            font-size: 20px;
+            font-weight: 500;
+            color: $text-color;
+            text-decoration: none;
+            padding: 10px 0;
+            border-bottom: 4px solid transparent;
+            transition: color $anim-duration ease;
 
-        @media (max-width: $mobile) {
-            text-transform: none;
-        }
+            @media (max-width: $mobile) {
+                text-transform: none;
+            }
 
-        &:focus-visible {
-            outline: 2px solid $primary-line-color;
-            outline-offset: 6px;
-        }
+            &:focus-visible {
+                outline: 2px solid $primary-line-color;
+                outline-offset: 6px;
+            }
 
-        &.active {
-            color: $primary-line-color;
-            border-bottom-color: $primary-line-color;
-        }
+            &.active {
+                color: $primary-line-color;
+                border-bottom-color: $primary-line-color;
+            }
         }
     }
 
     @media (max-width: $tablet) {
         &__burger {
-        display: block;
-        z-index: 20;
-        margin-right: 2px;
+            display: block;
+            z-index: 20;
+            margin-right: 2px;
         }
 
         &__nav {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 0;
-        background: $secondary-background-color;
-        border-top: 2px solid $primary-line-color;
-        border-bottom: 2px solid $primary-line-color;
-        z-index: 10;
-        box-shadow: 0 18px 32px rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            background: $secondary-background-color;
+            border-top: 2px solid $primary-line-color;
+            border-bottom: 2px solid $primary-line-color;
+            z-index: 10;
+            box-shadow: 0 18px 32px rgba(0, 0, 0, 0.5);
 
-        //collapse the menu by default
-        max-height: 0;
-        opacity: 0;
-        overflow: hidden;
-        transform: translateY(-8px);
-        pointer-events: none;
-        visibility: hidden;
-        transition: max-height $sliding-duration ease-in-out,
+            //collapse the menu by default
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transform: translateY(-8px);
+            pointer-events: none;
+            visibility: hidden;
+            transition:
+                max-height $sliding-duration ease-in-out,
+                opacity $sliding-duration ease-in-out,
+                transform $sliding-duration ease-in-out,
+                visibility 0s linear $sliding-duration;
+
+            &.is-open {
+                max-height: 320px;
+                opacity: 1;
+                transform: translateY(0);
+                pointer-events: auto;
+                visibility: visible;
+                transition:
+                    max-height $sliding-duration ease-in-out,
                     opacity $sliding-duration ease-in-out,
                     transform $sliding-duration ease-in-out,
-                    visibility 0s linear $sliding-duration;
-
-        &.is-open {
-            max-height: 320px;
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: auto;
-            visibility: visible;
-            transition: max-height $sliding-duration ease-in-out,
-                        opacity $sliding-duration ease-in-out,
-                        transform $sliding-duration ease-in-out,
-                        visibility 0s linear 0s;
-        }
-
-        &-link {
-            position: relative;
-            font-size: 20px;
-            font-weight: 500;
-            border-bottom: none;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 20px 56px 20px 20px;
-            color: $text-color;
-
-            &:focus-visible {
-            outline: 2px solid $primary-line-color;
-            outline-offset: -2px;
+                    visibility 0s linear 0s;
             }
 
-            &::after {
-            content: ">";
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: $primary-line-color;
-            font-size: 34px;
-            font-weight: 400;
-            }
+            &-link {
+                position: relative;
+                font-size: 20px;
+                font-weight: 500;
+                border-bottom: none;
+                border-top: 1px solid rgba(255, 255, 255, 0.08);
+                padding: 20px 56px 20px 20px;
+                color: $text-color;
 
-            &.active {
-            color: $primary-line-color;
-            text-decoration: none;
-            border-left: 4px solid $primary-line-color;
-            padding-left: 16px;
+                &:focus-visible {
+                    outline: 2px solid $primary-line-color;
+                    outline-offset: -2px;
+                }
+
+                &::after {
+                    content: '>';
+                    position: absolute;
+                    right: 20px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    color: $primary-line-color;
+                    font-size: 34px;
+                    font-weight: 400;
+                }
+
+                &.active {
+                    color: $primary-line-color;
+                    text-decoration: none;
+                    border-left: 4px solid $primary-line-color;
+                    padding-left: 16px;
+                }
             }
-        }
         }
     }
     @media (prefers-reduced-motion: reduce) {
-            .header__nav {
-                transition: none;
-                transform: none;
-            }
+        .header__nav {
+            transition: none;
+            transform: none;
         }
+    }
 }
