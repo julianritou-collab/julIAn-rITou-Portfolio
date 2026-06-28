@@ -18,6 +18,7 @@
         color: $text-color;
         font-family: $title-font-family;
         font-size: 36px;
+        text-shadow: 0 0 6px rgba($primary-line-color, 0.69);
     }
 
     &__content {

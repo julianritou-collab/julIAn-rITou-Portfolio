@@ -2,56 +2,56 @@
 
 .footer {
 
-  &__inner {
-    padding: 20px 50px;
-    background-color: $secondary-background-color;
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    column-gap: 40px;
-    border-top: 3px solid $primary-line-color;
-    box-shadow: 0 -10px 35px rgba(0, 0, 0, 0.55);
+    &__inner {
+        padding: 20px 50px;
+        background-color: $secondary-background-color;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        column-gap: 40px;
+        border-top: 3px solid $primary-line-color;
+        //box-shadow: 0 -10px 35px rgba(0, 0, 0, 0.55);
 
-    .btn {
-      justify-self: center;
+        .btn {
+        justify-self: center;
+        }
+
+        @media (max-width: $mobile) {
+        grid-template-columns: 1fr;
+        row-gap: 14px;
+        column-gap: 0;
+        justify-items: center;
+        }
     }
 
-    @media (max-width: $mobile) {
-      grid-template-columns: 1fr;
-      row-gap: 14px;
-      column-gap: 0;
-      justify-items: center;
+    &__linkedin-link {
+        display: inline-flex;
+        border-radius: 4px;
+        justify-self: start;  
+        &:focus-visible {
+        outline: 3px solid $primary-line-color;
+        outline-offset: 6px;
+        }
+        @media (max-width: $mobile) {
+        justify-self: center;
+        }
     }
-  }
 
-  &__linkedin-link {
-    display: inline-flex;
-    border-radius: 4px;
-    justify-self: start;  
-    &:focus-visible {
-      outline: 3px solid $primary-line-color;
-      outline-offset: 6px;
+    &__logo {
+        max-height: 54px;
+        justify-self: start;
     }
-    @media (max-width: $mobile) {
-      justify-self: center;
+
+    &__text {
+        color: $text-color;
+        font-size: 18px;
+        font-weight: 300;
+        text-align: center;
+        justify-self: end;
+
+        @media (max-width: $mobile) {
+        justify-self: center;
+        font-size: 16px;
+        }
     }
-  }
-
-  &__logo {
-    max-height: 54px;
-    justify-self: start;
-  }
-
-  &__text {
-    color: $text-color;
-    font-size: 18px;
-    font-weight: 300;
-    text-align: center;
-    justify-self: end;
-
-    @media (max-width: $mobile) {
-      justify-self: center;
-      font-size: 16px;
-    }
-  }
 }

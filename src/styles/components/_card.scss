@@ -1,0 +1,108 @@
+@use '../base/variables' as *;
+
+.card {
+    position: relative;
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+    background: $secondary-background-color;
+    border: 2px solid rgba($primary-line-color, 0.8);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.45);
+    text-decoration: none;
+    color: $text-color;
+    transition: transform $anim-duration ease, box-shadow $anim-duration ease, border-color $anim-duration ease;
+
+    &:hover {
+        transform: translateY(-4px);
+        border-color: $primary-line-color;
+        box-shadow: 0 18px 32px rgba(0, 0, 0, 0.55);
+
+        .card__image {
+        transform: scale(1.06);
+        }
+    }
+
+    &:focus-visible {
+        outline: 3px solid $primary-line-color;
+        outline-offset: 4px;
+    }
+
+    &__image-container {
+        position: relative;
+        aspect-ratio: 16 / 10;
+        background: $secondary-background-color;
+        overflow: hidden;
+
+        &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            to top,
+            rgba($secondary-background-color, 0.9) 0%,
+            rgba($secondary-background-color, 0.25) 45%,
+            rgba($secondary-background-color, 0) 75%
+        );
+        pointer-events: none;
+        }
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.45s ease;
+    }
+
+    &__content {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        padding: 14px 16px 16px;
+        border-top: 2px solid rgba($primary-line-color, 0.85);
+        background: linear-gradient(to top, rgba($secondary-background-color, 0.95), rgba($secondary-background-color, 0.7));
+    }
+
+    &__title {
+        margin: 0;
+        color: $primary-line-color;
+        font-family: $title-font-family;
+        font-size: 24px;
+        line-height: 1.1;
+    }
+
+    &__subtitle {
+        margin-top: 8px;
+        color: $text-color;
+        font-size: 16px;
+        line-height: 1.4;
+        max-height: calc(1.4em * 2);
+        overflow: hidden;
+    }
+
+    @media (max-width: $mobile) {
+        border-radius: 10px;
+
+        &__title {
+        font-size: 20px;
+        }
+
+        &__subtitle {
+        font-size: 16px;
+        }
+    }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+    .card,
+    .card__image {
+        transition: none;
+    }
+
+    .card:hover {
+        transform: none;
+    }
+}

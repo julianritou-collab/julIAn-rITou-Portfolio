@@ -10,7 +10,9 @@
 @use "components/contact-modal";
 @use "components/spinner";
 @use "components/landing-banner";
+@use 'components/card';
 
 // Pages
 @use 'pages/not-found';
 @use 'pages/about';
+@use 'pages/home';
