@@ -18,7 +18,7 @@ function Card({ project }) {
                 />
             </div>
             <div className="card__content">
-                <h2 className="card__title">{project.title}</h2>
+                <h3 className="card__title">{project.title}</h3>
                 <p className="card__subtitle">{project.subtitle}</p>
             </div>
         </Link>

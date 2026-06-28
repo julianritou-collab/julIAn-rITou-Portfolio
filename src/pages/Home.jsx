@@ -14,14 +14,30 @@ function Home() {
     }
 
     return (
-        <section className="home">
-            <h1 className="home__title">Accueil</h1>
-            <div className="home__grid">
-                {projects.map((project) => (
-                    <Card key={project.id} project={project} />
-                ))}
+        <div className="home">
+            <div className="home__header">
+                <h1 className="home__title">Bienvenue sur mon portfolio</h1>
+                <p className="home__subtitle">
+                    Découvrez mes réalisations en développement web, allant de sites vitrines à des
+                    applications interactives.
+                </p>
+                <p className="home__subtitle">
+                    Chaque projet reflète mon engagement envers la qualité, l'accessibilité et la
+                    satisfaction des utilisateurs.
+                </p>
+                <p className="home__subtitle">
+                    N'hésitez pas à explorer les projets et à me contacter pour toute collaboration.
+                </p>
             </div>
-        </section>
+            <section className="home__content-section">
+                <h2 className="home__content-title">Mes Projets</h2>
+                <div className="home__content-grid">
+                    {projects.map((project) => (
+                        <Card key={project.id} project={project} />
+                    ))}
+                </div>
+            </section>
+        </div>
     )
 }
 

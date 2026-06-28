@@ -19,7 +19,7 @@ function About() {
         <div className="about">
             <div className="about__header">
                 <LandingBanner images={LANDING_IMAGES} speed={45} height={110} />
-                <h1 className="about__title">Développeur Fullstack</h1>
+                <h1 className="about__title">Qui suis-je ?</h1>
             </div>
             <div className="about__content">
                 <section className="about__section about__section--me">
@@ -32,8 +32,7 @@ function About() {
                         className="about__me-text"
                         text={`En 2001, un développeur fut condamné à résoudre des bugs que personne ne voulait toucher.
 
-                            Aujourd’hui, recherché par les startups pour ses compétences improbables,
-                            il survit en acceptant les missions que les autres considèrent comme impossibles:
+                            Aujourd’hui, recherché par les startups pour ses compétences improbables,il survit en acceptant les missions que les autres considèrent comme impossibles:
                             -comprendre ce que personne ne comprend,
                             -réparer ce que personne n’ose toucher,
                             -et livrer ce qui devait être livré hier!
@@ -42,10 +41,10 @@ function About() {
                             Votre API explose en production à 3h du matin ?
                             Votre développeur senior a mystérieusement disparu au moment du déploiement ?   
 
-                            Si vous avez un problème, si personne d’autre ne peut vous aider, Il ne vous reste qu’une seule solution`}
+                            Si vous avez un problème, si personne d’autre ne peut vous aider, Il ne vous reste qu’une seule solution...`}
                     />
                     <p className="about__me-text">
-                        contactez Juli<strong>A</strong>n Ritou <strong>Team</strong>
+                        ...contactez Juli<strong>A</strong>n Ritou <strong>Team</strong>
                     </p>
                 </section>
                 <section className="about__section about__section--training">
