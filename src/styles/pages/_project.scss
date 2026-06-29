@@ -1,0 +1,18 @@
+@use '../base/variables' as *;
+
+.project {
+}
+
+// Focus visible dans la lightbox yet-another-react-lightbox
+.yarl__button:focus-visible {
+    outline: 3px solid $primary-line-color;
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+// Focus visible dans la galerie react-photo-album
+.react-photo-album--photo:focus-visible {
+    outline: 3px solid $primary-line-color;
+    outline-offset: 4px;
+    border-radius: 4px;
+}
