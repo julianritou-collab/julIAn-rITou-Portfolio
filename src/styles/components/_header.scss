@@ -9,6 +9,12 @@
         border-bottom: 3px solid $primary-line-color;
         //box-shadow: 0 10px 35px rgba(0, 0, 0, 0.55);
         position: relative;
+
+        height: 110px;
+
+        @media (max-width: $mobile) {
+            height: 84px;
+        }
     }
 
     &__logo-container {
@@ -18,12 +24,12 @@
 
     &__logo-text {
         font-family: $title-font-family;
-        font-size: 36px;
+        font-size: 32px;
         font-weight: 700;
         padding: 0 10px;
         transition: font-size $anim-duration ease-in-out;
         @media (max-width: $mobile) {
-            font-size: 26px;
+            font-size: 22px;
         }
         color: $text-color;
         strong {
@@ -32,10 +38,12 @@
     }
 
     &__logo {
-        max-height: 150px;
+        max-height: 86px;
+        width: auto;
         transition: max-height $anim-duration ease-in-out;
+
         @media (max-width: $mobile) {
-            max-height: 100px;
+            max-height: 62px;
         }
     }
 
