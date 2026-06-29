@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { RowsPhotoAlbum } from 'react-photo-album'
 import 'react-photo-album/rows.css'
 import Lightbox from 'yet-another-react-lightbox'
+import Slideshow from 'yet-another-react-lightbox/plugins/slideshow'
 import 'yet-another-react-lightbox/styles.css'
 import { useGetProjects } from '../hooks/useGetProjects'
 import Spinner from '../components/Spinner'
@@ -59,10 +60,14 @@ function Project() {
                     index={index}
                     slides={photos}
                     close={() => setIndex(-1)}
+                    plugins={[Slideshow]}
+                    slideshow={{ autoplay: true, delay: 3000 }}
                     labels={{
                         Close: 'Revenir à la galerie',
                         Previous: 'Photo précédente',
                         Next: 'Photo suivante',
+                        Pause: 'Mettre en pause le diaporama',
+                        Play: 'Reprendre le diaporama',
                     }}
                 />
             </div>
