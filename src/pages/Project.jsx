@@ -25,10 +25,8 @@ function Project() {
 
     if (!project) return null
 
-    const photos = project.pictures.map((src, i) => ({
-        src,
-        width: 1600,
-        height: 900,
+    const photos = project.pictures.map((pic, i) => ({
+        ...pic,
         alt: `${project.title} - image ${i + 1}`,
     }))
 

@@ -8,9 +8,9 @@
         "cover": "/data/images/projects/Kasa.jpg",
         "link": "https://kasa-hazel.vercel.app/",
         "pictures": [
-            "/data/images/projects/Kasa.jpg",
-            "/data/images/projects/Kasa-2.jpg",
-            "/data/images/projects/Kasa-3.jpg"
+            { "src": "/data/images/projects/Kasa.jpg", "width": 1200, "height": 800 },
+            { "src": "/data/images/projects/Kasa-2.jpg", "width": 800, "height": 800 },
+            { "src": "/data/images/projects/Kasa-3.jpg", "width": 1900, "height": 1000 }
         ],
         "spitch": ""
     },
@@ -23,9 +23,9 @@
         "cover": "/data/images/projects/Kasa.jpg",
         "link": "https://kasa-hazel.vercel.app/",
         "pictures": [
-            "/data/images/projects/Kasa.jpg",
-            "/data/images/projects/Kasa-2.jpg",
-            "/data/images/projects/Kasa-3.jpg"
+            { "src": "/data/images/projects/Kasa.jpg", "width": 600, "height": 600 },
+            { "src": "/data/images/projects/Kasa-2.jpg", "width": 600, "height": 600 },
+            { "src": "/data/images/projects/Kasa-3.jpg", "width": 1200, "height": 600 }
         ],
         "spitch": ""
     },
@@ -38,9 +38,9 @@
         "cover": "/data/images/projects/Kasa.jpg",
         "link": "https://kasa-hazel.vercel.app/",
         "pictures": [
-            "/data/images/projects/Kasa.jpg",
-            "/data/images/projects/Kasa-2.jpg",
-            "/data/images/projects/Kasa-3.jpg"
+            { "src": "/data/images/projects/Kasa.jpg", "width": 1920, "height": 1080 },
+            { "src": "/data/images/projects/Kasa-2.jpg", "width": 600, "height": 600 },
+            { "src": "/data/images/projects/Kasa-3.jpg", "width": 400, "height": 800 }
         ],
         "spitch": ""
     }
