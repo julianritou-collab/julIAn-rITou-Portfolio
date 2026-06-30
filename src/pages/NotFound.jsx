@@ -8,7 +8,7 @@ function NotFound() {
                 Oups! La page que<span className="newline-mobile"> </span>vous demandez n'existe
                 pas.
             </p>
-            <Link to="/" className="not-found__link">
+            <Link to="/" className="btn btn--tertiary btn--large">
                 Retourner sur la page d'accueil
             </Link>
         </div>

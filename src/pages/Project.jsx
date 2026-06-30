@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { RowsPhotoAlbum } from 'react-photo-album'
 import 'react-photo-album/rows.css'
 import Lightbox from 'yet-another-react-lightbox'
@@ -13,6 +13,7 @@ function Project() {
     const { id } = useParams()
     const { projects, loading, error } = useGetProjects()
     const [index, setIndex] = useState(-1)
+    const navigate = useNavigate()
 
     if (loading) {
         return <Spinner message="Chargement du projet..." />
@@ -24,7 +25,10 @@ function Project() {
 
     const project = projects.find((p) => p.id === id)
 
-    if (!project) return null
+    if (!project) {
+        navigate('/not-found')
+        return null
+    }
 
     const photos = project.pictures.map((pic, i) => ({
         ...pic,

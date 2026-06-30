@@ -16,7 +16,7 @@
         font-size: 288px;
         font-weight: 500;
         font-family: $title-font-family;
-        color: $primary-line-color;
+        color: $secondary-line-color;
         transition: font-size $anim-duration ease-in-out;
 
         @media (max-width: $mobile) {
@@ -28,7 +28,7 @@
         font-size: 36px;
         font-weight: 500;
         font-family: $title-font-family;
-        color: $primary-line-color;
+        color: $secondary-line-color;
         text-align: center;
 
         @media (max-width: $mobile) {
