@@ -48,7 +48,12 @@ function Header() {
     return (
         <header className="header">
             <div className="container header__inner">
-                <div className="header__logo-container">
+                <NavLink
+                    to="/"
+                    end
+                    className="header__logo-container"
+                    aria-label="Retour à l'accueil"
+                >
                     <img
                         src={logo}
                         alt="logo rock'n'roll de julIAn rITou Team"
@@ -57,7 +62,7 @@ function Header() {
                     <span className="header__logo-text">
                         jul<strong>IA</strong>n r<strong>IT</strong>ou <strong>Team</strong>
                     </span>
-                </div>
+                </NavLink>
 
                 <button
                     ref={burgerButtonRef}

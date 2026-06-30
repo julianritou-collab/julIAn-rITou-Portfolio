@@ -18,8 +18,24 @@
     }
 
     &__logo-container {
+        text-decoration: none;
         display: flex;
         align-items: center;
+
+        &:hover .header__logo-text {
+            text-shadow:
+                0 0 8px $primary-line-color,
+                0 0 16px $primary-line-color;
+        }
+        &:hover .header__logo {
+            filter: drop-shadow(0 0 8px $primary-line-color);
+        }
+
+        &:focus-visible {
+            outline: 3px solid $primary-line-color;
+            outline-offset: 6px;
+            border-radius: 4px;
+        }
     }
 
     &__logo-text {
@@ -27,7 +43,9 @@
         font-size: 32px;
         font-weight: 700;
         padding: 0 10px;
-        transition: font-size $anim-duration ease-in-out;
+        transition:
+            font-size $anim-duration ease-in-out,
+            text-shadow $anim-duration ease-in-out;
         @media (max-width: $mobile) {
             font-size: 22px;
         }
@@ -40,7 +58,9 @@
     &__logo {
         max-height: 86px;
         width: auto;
-        transition: max-height $anim-duration ease-in-out;
+        transition:
+            max-height $anim-duration ease-in-out,
+            filter $anim-duration ease-in-out;
 
         @media (max-width: $mobile) {
             max-height: 62px;
