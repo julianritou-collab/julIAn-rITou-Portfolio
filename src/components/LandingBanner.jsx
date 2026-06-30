@@ -67,8 +67,8 @@ export default function LandingBanner({ images = LANDING_IMAGES, speed, height =
                             className="landing-banner__image"
                             src={item.src}
                             alt=""
-                            loading="lazy"
-                            decoding="async"
+                            loading="eager"
+                            decoding="sync"
                         />
                     ))}
                 </div>

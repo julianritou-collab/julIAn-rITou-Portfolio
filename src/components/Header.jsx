@@ -4,6 +4,7 @@ import logo from '../assets/logos/logo-final.png'
 
 function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const navRef = useRef(null)
     const burgerButtonRef = useRef(null)
 
     const closeMenu = () => setIsMenuOpen(false)
@@ -25,6 +26,23 @@ function Header() {
         return () => {
             window.removeEventListener('keydown', handleEscape)
         }
+    }, [isMenuOpen])
+
+    useEffect(() => {
+        if (!isMenuOpen) return
+
+        const handleClickOutside = (event) => {
+            if (
+                navRef.current &&
+                !navRef.current.contains(event.target) &&
+                !burgerButtonRef.current.contains(event.target)
+            ) {
+                setIsMenuOpen(false)
+            }
+        }
+
+        document.addEventListener('mousedown', handleClickOutside)
+        return () => document.removeEventListener('mousedown', handleClickOutside)
     }, [isMenuOpen])
 
     return (
@@ -65,6 +83,7 @@ function Header() {
                 </button>
 
                 <nav
+                    ref={navRef}
                     id="main-nav"
                     className={`header__nav ${isMenuOpen ? 'is-open' : ''}`}
                     aria-label="Navigation principale"
