@@ -15,6 +15,7 @@ function Router() {
                     <Route path="/project/:id" element={<Project />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/skills" element={<Skills />} />
+                    <Route path="/not-found" element={<NotFound />} />
                     <Route path="*" element={<NotFound />} />
                 </Route>
             </Routes>

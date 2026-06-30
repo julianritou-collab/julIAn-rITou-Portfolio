@@ -11,6 +11,7 @@ function ContactModal({ open, onOpenChange, onCloseAutoFocus }) {
     const [form, setForm] = useState({ email: '', subject: '', message: '' })
     const [fieldErrors, setFieldErrors] = useState({})
     const [error, setError] = useState('')
+    const [success, setSuccess] = useState(false)
     const [sending, setSending] = useState(false)
 
     const emailRef = useRef(null)
@@ -84,7 +85,11 @@ function ContactModal({ open, onOpenChange, onCloseAutoFocus }) {
 
             setForm({ email: '', subject: '', message: '' })
             setError('')
-            onOpenChange(false)
+            setSuccess(true)
+            setTimeout(() => {
+                setSuccess(false)
+                onOpenChange(false)
+            }, 3500)
         } catch {
             setError('Envoi impossible pour le moment.')
         } finally {
@@ -106,111 +111,136 @@ function ContactModal({ open, onOpenChange, onCloseAutoFocus }) {
                         <p id="contact-desc" className="contact-modal__description">
                             Contactez-moi directement par un message, je vous réponds rapidement!
                         </p>
-                        <form onSubmit={onSubmit} className="contact-modal__form" noValidate>
-                            <div className="contact-modal__field-group">
-                                <label className="contact-modal__label" htmlFor="contact-email">
-                                    Email
-                                </label>
-                                <input
-                                    ref={emailRef}
-                                    id="contact-email"
-                                    name="email"
-                                    type="email"
-                                    value={form.email}
-                                    onChange={onChange}
-                                    required
-                                    aria-invalid={Boolean(fieldErrors.email)}
-                                    aria-describedby={
-                                        fieldErrors.email ? 'contact-email-error' : undefined
-                                    }
-                                    className={`contact-modal__control ${fieldErrors.email ? 'contact-modal__control--invalid' : ''}`.trim()}
-                                />
-                                <span id="contact-email-error" className="contact-modal__sr-only">
-                                    {fieldErrors.email || ''}
-                                </span>
-                            </div>
-
-                            <div className="contact-modal__field-group">
-                                <label className="contact-modal__label" htmlFor="contact-subject">
-                                    Sujet
-                                </label>
-                                <select
-                                    ref={subjectRef}
-                                    id="contact-subject"
-                                    name="subject"
-                                    value={form.subject}
-                                    onChange={onChange}
-                                    required
-                                    aria-invalid={Boolean(fieldErrors.subject)}
-                                    aria-describedby={
-                                        fieldErrors.subject ? 'contact-subject-error' : undefined
-                                    }
-                                    className={`contact-modal__control ${fieldErrors.subject ? 'contact-modal__control--invalid' : ''}`.trim()}
-                                >
-                                    <option value="">Choisir un sujet</option>
-                                    {SUBJECTS.map((s) => (
-                                        <option key={s} value={s}>
-                                            {s}
-                                        </option>
-                                    ))}
-                                </select>
-                                <span id="contact-subject-error" className="contact-modal__sr-only">
-                                    {fieldErrors.subject || ''}
-                                </span>
-                            </div>
-
-                            <div className="contact-modal__field-group">
-                                <label className="contact-modal__label" htmlFor="contact-message">
-                                    Message
-                                </label>
-                                <textarea
-                                    ref={messageRef}
-                                    id="contact-message"
-                                    name="message"
-                                    value={form.message}
-                                    onChange={onChange}
-                                    minLength={10}
-                                    required
-                                    aria-invalid={Boolean(fieldErrors.message)}
-                                    aria-describedby={
-                                        fieldErrors.message ? 'contact-message-error' : undefined
-                                    }
-                                    className={`contact-modal__control ${fieldErrors.message ? 'contact-modal__control--invalid' : ''}`.trim()}
-                                />
-                                <span id="contact-message-error" className="contact-modal__sr-only">
-                                    {fieldErrors.message || ''}
-                                </span>
-                            </div>
-
-                            {error ? (
-                                <p className="contact-modal__error" role="alert">
-                                    {error}
-                                </p>
-                            ) : null}
-
-                            <div className="contact-modal__actions">
-                                <Button
-                                    className="contact-modal__submit"
-                                    type="submit"
-                                    variant="primary"
-                                    size="medium"
-                                    disabled={sending}
-                                >
-                                    {sending ? 'Envoi...' : 'Envoyer'}
-                                </Button>
-
-                                <Dialog.Close asChild>
-                                    <Button
-                                        className="contact-modal__cancel"
-                                        type="button"
-                                        variant="secondary"
-                                        size="medium"
+                        {success ? (
+                            <p role="status" className="contact-modal__success">
+                                Message envoyé avec succès !
+                            </p>
+                        ) : (
+                            <form onSubmit={onSubmit} className="contact-modal__form" noValidate>
+                                <div className="contact-modal__field-group">
+                                    <label className="contact-modal__label" htmlFor="contact-email">
+                                        Email
+                                    </label>
+                                    <input
+                                        ref={emailRef}
+                                        id="contact-email"
+                                        name="email"
+                                        type="email"
+                                        value={form.email}
+                                        onChange={onChange}
+                                        required
+                                        aria-invalid={Boolean(fieldErrors.email)}
+                                        aria-describedby={
+                                            fieldErrors.email ? 'contact-email-error' : undefined
+                                        }
+                                        className={`contact-modal__control ${fieldErrors.email ? 'contact-modal__control--invalid' : ''}`.trim()}
+                                    />
+                                    <span
+                                        id="contact-email-error"
+                                        className="contact-modal__sr-only"
                                     >
-                                        Annuler
+                                        {fieldErrors.email || ''}
+                                    </span>
+                                </div>
+
+                                <div className="contact-modal__field-group">
+                                    <label
+                                        className="contact-modal__label"
+                                        htmlFor="contact-subject"
+                                    >
+                                        Sujet
+                                    </label>
+                                    <select
+                                        ref={subjectRef}
+                                        id="contact-subject"
+                                        name="subject"
+                                        value={form.subject}
+                                        onChange={onChange}
+                                        required
+                                        aria-invalid={Boolean(fieldErrors.subject)}
+                                        aria-describedby={
+                                            fieldErrors.subject
+                                                ? 'contact-subject-error'
+                                                : undefined
+                                        }
+                                        className={`contact-modal__control ${fieldErrors.subject ? 'contact-modal__control--invalid' : ''}`.trim()}
+                                    >
+                                        <option value="">Choisir un sujet</option>
+                                        {SUBJECTS.map((s) => (
+                                            <option key={s} value={s}>
+                                                {s}
+                                            </option>
+                                        ))}
+                                    </select>
+                                    <span
+                                        id="contact-subject-error"
+                                        className="contact-modal__sr-only"
+                                    >
+                                        {fieldErrors.subject || ''}
+                                    </span>
+                                </div>
+
+                                <div className="contact-modal__field-group">
+                                    <label
+                                        className="contact-modal__label"
+                                        htmlFor="contact-message"
+                                    >
+                                        Message
+                                    </label>
+                                    <textarea
+                                        ref={messageRef}
+                                        id="contact-message"
+                                        name="message"
+                                        value={form.message}
+                                        onChange={onChange}
+                                        minLength={10}
+                                        required
+                                        aria-invalid={Boolean(fieldErrors.message)}
+                                        aria-describedby={
+                                            fieldErrors.message
+                                                ? 'contact-message-error'
+                                                : undefined
+                                        }
+                                        className={`contact-modal__control ${fieldErrors.message ? 'contact-modal__control--invalid' : ''}`.trim()}
+                                    />
+                                    <span
+                                        id="contact-message-error"
+                                        className="contact-modal__sr-only"
+                                    >
+                                        {fieldErrors.message || ''}
+                                    </span>
+                                </div>
+
+                                {error ? (
+                                    <p className="contact-modal__error" role="alert">
+                                        {error}
+                                    </p>
+                                ) : null}
+
+                                <div className="contact-modal__actions">
+                                    <Button
+                                        className="contact-modal__submit"
+                                        type="submit"
+                                        variant="primary"
+                                        size="medium"
+                                        disabled={sending}
+                                    >
+                                        {sending ? 'Envoi...' : 'Envoyer'}
                                     </Button>
-                                </Dialog.Close>
-                            </div>
-                        </form>
+
+                                    <Dialog.Close asChild>
+                                        <Button
+                                            className="contact-modal__cancel"
+                                            type="button"
+                                            variant="secondary"
+                                            size="medium"
+                                        >
+                                            Annuler
+                                        </Button>
+                                    </Dialog.Close>
+                                </div>
+                            </form>
+                        )}
                     </Dialog.Content>
                 </div>
             </Dialog.Portal>
