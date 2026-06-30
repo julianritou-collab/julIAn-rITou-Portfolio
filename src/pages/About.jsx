@@ -33,9 +33,9 @@ function About() {
                         text={`En 2001, un développeur fut condamné à résoudre des bugs que personne ne voulait toucher.
 
                             Aujourd’hui, recherché par les startups pour ses compétences improbables,il survit en acceptant les missions que les autres considèrent comme impossibles:
-                            -comprendre ce que personne ne comprend,
-                            -réparer ce que personne n’ose toucher,
-                            -et livrer ce qui devait être livré hier!
+                            - comprendre ce que personne ne comprend,
+                            - réparer ce que personne n’ose toucher,
+                            - et livrer ce qui devait être livré hier!
 
                             Votre cahier des charges tient sur un post-it ?
                             Votre API explose en production à 3h du matin ?
