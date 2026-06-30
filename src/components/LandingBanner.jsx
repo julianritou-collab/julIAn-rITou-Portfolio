@@ -43,7 +43,7 @@ export default function LandingBanner({ images = LANDING_IMAGES, speed, height =
         <section
             className={`landing-banner${isPaused ? ' is-paused' : ''}`}
             style={inlineVars}
-            aria-label="Banniere decorative defilante"
+            aria-label="Bannière décorative défilante"
         >
             <button
                 type="button"
@@ -51,8 +51,8 @@ export default function LandingBanner({ images = LANDING_IMAGES, speed, height =
                 aria-pressed={isPaused}
                 aria-label={
                     isPaused
-                        ? 'Reprendre le defilement de la banniere'
-                        : 'Mettre en pause la banniere'
+                        ? 'Reprendre le défilement de la bannière'
+                        : 'Mettre en pause la bannière'
                 }
                 onClick={() => setIsPaused((prev) => !prev)}
             >

@@ -20,7 +20,7 @@ function Project() {
     }
 
     if (error) {
-        return <p>Erreur lors du chargement du projet : {error.message}</p>
+        return <p role="alert">Erreur lors du chargement du projet : {error.message}</p>
     }
 
     const project = projects.find((p) => p.id === id)

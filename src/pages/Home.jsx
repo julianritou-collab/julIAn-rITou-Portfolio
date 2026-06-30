@@ -10,7 +10,7 @@ function Home() {
     }
 
     if (error) {
-        return <p>Erreur lors du chargement des projets : {error.message}</p>
+        return <p role="alert">Erreur lors du chargement des projets : {error.message}</p>
     }
 
     return (
