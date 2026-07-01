@@ -25,44 +25,91 @@ function Project() {
         return <p role="alert">Erreur lors du chargement du projet : {error.message}</p>
     }
 
-    const project = projects.find((p) => p.id === id)
+    const currentProject = projects.find((p) => p.id === id)
 
-    if (!project) {
+    if (!currentProject) {
         navigate('/not-found')
         return null
     }
 
-    const photos = project.pictures.map((pic, i) => ({
+    const photos = currentProject.pictures.map((pic, i) => ({
         ...pic,
-        alt: `${project.title} - image ${i + 1}`,
+        alt: `${currentProject.title} - image ${i + 1}`,
     }))
 
     return (
         <div className="project">
-            <h1>{project.title}</h1>
-            <div className="project__description">
-                <Collapse title="Points forts du projet" isOpen={true}>
-                    <ul>
-                        {project.strengths.map((strength, index) => (
-                            <li key={index}>
-                                <BoldText text={strength} />
-                            </li>
-                        ))}
-                    </ul>
-                </Collapse>
+            <h1>{currentProject.title}</h1>
+            <section className="project__description">
+                <h2>{currentProject.subtitle}</h2>
 
-                {project.link && project.link !== '' && (
-                    <Button
-                        href={project.link}
-                        variant="tertiary"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Voir le projet
-                    </Button>
+                {currentProject.objective && <p>{currentProject.objective}</p>}
+                {currentProject.context && <p>{currentProject.context}</p>}
+
+                {currentProject.goals && currentProject.goals.length > 0 && (
+                    <Collapse title="Objectifs du projet" isOpen={true}>
+                        <ul>
+                            {currentProject.goals.map((goal, index) => (
+                                <li key={index}>
+                                    <BoldText text={goal} />
+                                </li>
+                            ))}
+                        </ul>
+                    </Collapse>
                 )}
-            </div>
-            <div className="project__photo-album">
+                {currentProject.skills && currentProject.skills.length > 0 && (
+                    <Collapse title="Technologies utilisées" isOpen={true}>
+                        <ul>
+                            {currentProject.skills.map((skill, index) => (
+                                <li key={index}>
+                                    <BoldText text={skill} />
+                                </li>
+                            ))}
+                        </ul>
+                    </Collapse>
+                )}
+                {currentProject.result && (
+                    <>
+                        <h2>Résultats obtenus</h2>
+                        <p>{currentProject.result}</p>
+                        {currentProject.link && currentProject.link !== '' && (
+                            <Button
+                                href={currentProject.link}
+                                variant="tertiary"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Voir le projet
+                            </Button>
+                        )}
+
+                        {currentProject.strengths && currentProject.strengths.length > 0 && (
+                            <Collapse title="Points forts du projet" isOpen={true}>
+                                <ul>
+                                    {currentProject.strengths.map((strength, index) => (
+                                        <li key={index}>
+                                            <BoldText text={strength} />
+                                        </li>
+                                    ))}
+                                </ul>
+                            </Collapse>
+                        )}
+                        {currentProject.improvements && currentProject.improvements.length > 0 && (
+                            <Collapse title="Axes d'amélioration" isOpen={true}>
+                                <ul>
+                                    {currentProject.improvements.map((improvement, index) => (
+                                        <li key={index}>
+                                            <BoldText text={improvement} />
+                                        </li>
+                                    ))}
+                                </ul>
+                            </Collapse>
+                        )}
+                    </>
+                )}
+            </section>
+            <section className="project__photo-album">
+                <h2>Galerie de photos</h2>
                 <RowsPhotoAlbum
                     photos={photos}
                     onClick={({ index }) => setIndex(index)}
@@ -85,7 +132,7 @@ function Project() {
                         Play: 'Reprendre le diaporama',
                     }}
                 />
-            </div>
+            </section>
         </div>
     )
 }

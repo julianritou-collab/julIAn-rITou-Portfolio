@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import logo from '../assets/logos/logo-final.png'
+import BoldText from './BoldText'
 
 function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -60,7 +61,7 @@ function Header() {
                         className="header__logo"
                     />
                     <span className="header__logo-text">
-                        jul<strong>IA</strong>n r<strong>IT</strong>ou <strong>Team</strong>
+                        <BoldText text="jul**IA**n r**IT**ou **Team**" />
                     </span>
                 </NavLink>
 

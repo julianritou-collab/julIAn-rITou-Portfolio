@@ -3,17 +3,17 @@
         "id": "oc-project-5",
         "title": "Kasa",
         "subtitle": "Application web de location d'appartements",
-        "goals": "refonte du site web de location d'appartements Kasa, avec React et Sass. L'application permet aux utilisateurs de rechercher et de réserver des appartements à louer.",
-        "context": "Projet développé dans le cadre de la formation Développeur Web d' OpenClassrooms",
+        "objective": "Refonte du site web de location d'appartements Kasa, avec React et Sass. L'application permet aux utilisateurs de rechercher et de réserver des appartements à louer.",
+        "context": "Projet développé dans le cadre de la formation Développeur Web d' OpenClassrooms.",
         "skills": ["React", "React Router", "Sass", "Vite", "Node.js"],
-        "skillsdescription": [
-            "Initialisé une SPA (Single Page Application) avec Vite",
-            "Configurer la navigation entre les pages avec React Router",
-            "developper des composants React réutilisables et modulaires",
-            "mettre en oeuvre des animations CSS",
-            "structurer le style avec Sass"
+        "goals": [
+            "Initialisé une **SPA** (Single Page Application) avec Vite.",
+            "Configurer la navigation entre les pages avec **React Router**.",
+            "Développer des composants React **réutilisables et modulaires**.",
+            "Mettre en œuvre des **animations CSS**.",
+            "Structurer le style avec **Sass**."
         ],
-        "results": "L'application est fonctionnelle et permet aux utilisateurs de rechercher et de réserver des appartements à louer. Le site est responsive et s'adapte à tous les types d'écrans.",
+        "result": "L'application est fonctionnelle et permet aux utilisateurs de rechercher et de réserver des appartements à louer. Le site est responsive et s'adapte à tous les types d'écrans.",
         "strengths": [
             "Excellent projet dans l’ensemble, très complet et sérieux.",
             "Plusieurs bonus réalisés au-delà des attentes.",

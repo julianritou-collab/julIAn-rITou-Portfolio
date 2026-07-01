@@ -1,4 +1,5 @@
 import TypeWriter from '../components/Typewriter'
+import BoldText from '../components/BoldText'
 import LandingBanner from '../components/LandingBanner'
 import Landing1 from '../assets/images/banner/Landing1.jpg'
 import Landing2 from '../assets/images/banner/Landing2.jpg'
@@ -25,26 +26,25 @@ function About() {
                 <section className="about__section about__section--me">
                     <h2 className="about__section-title">À propos de moi</h2>
                     <p className="about__me-text">
-                        J’adore quand un<strong>e</strong> plan<strong>te</strong> se déroule sans
-                        accroc.
+                        <BoldText text="J’adore quand un**e** plan**te** se déroule sans accroc." />
                     </p>
                     <TypeWriter
                         className="about__me-text"
                         text={`En 2001, un développeur fut condamné à résoudre des bugs que personne ne voulait toucher.
 
-                            Aujourd’hui, recherché par les startups pour ses compétences improbables,il survit en acceptant les missions que les autres considèrent comme impossibles:
+                            Aujourd’hui, recherché par les startups pour ses compétences improbables, il survit en acceptant les missions que les autres considèrent comme impossibles:
                             - comprendre ce que personne ne comprend,
                             - réparer ce que personne n’ose toucher,
                             - et livrer ce qui devait être livré hier!
 
-                            Votre cahier des charges tient sur un post-it ?
-                            Votre API explose en production à 3h du matin ?
-                            Votre développeur senior a mystérieusement disparu au moment du déploiement ?   
+                            Votre cahier des charges tient sur un post-it?
+                            Votre API explose en production à 3h du matin?
+                            Votre développeur senior a mystérieusement disparu au moment du déploiement?   
 
                             Si vous avez un problème, si personne d’autre ne peut vous aider, Il ne vous reste qu’une seule solution...`}
                     />
                     <p className="about__me-text">
-                        ...contactez Juli<strong>A</strong>n Ritou <strong>Team</strong>
+                        <BoldText text="...contactez Juli**A**n Ritou **Team**" />
                     </p>
                 </section>
                 <section className="about__section about__section--training">
