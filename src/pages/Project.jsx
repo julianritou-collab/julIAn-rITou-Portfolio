@@ -8,6 +8,7 @@ import 'yet-another-react-lightbox/styles.css'
 import { useGetProjects } from '../hooks/useGetProjects'
 import Spinner from '../components/Spinner'
 import Button from '../components/Button'
+import Collapse from '../components/Collapse'
 
 function Project() {
     const { id } = useParams()
@@ -39,7 +40,14 @@ function Project() {
         <div className="project">
             <h1>{project.title}</h1>
             <div className="project__description">
-                <p>{project.description}</p>
+                <Collapse title="Points forts du projet" isOpen={true}>
+                    <ul>
+                        {project.strengths.map((strength, index) => (
+                            <li key={index}>{strength}</li>
+                        ))}
+                    </ul>
+                </Collapse>
+
                 {project.link && project.link !== '' && (
                     <Button
                         href={project.link}
