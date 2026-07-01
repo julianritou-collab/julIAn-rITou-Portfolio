@@ -9,6 +9,7 @@ import { useGetProjects } from '../hooks/useGetProjects'
 import Spinner from '../components/Spinner'
 import Button from '../components/Button'
 import Collapse from '../components/Collapse'
+import BoldText from '../components/BoldText'
 
 function Project() {
     const { id } = useParams()
@@ -43,7 +44,9 @@ function Project() {
                 <Collapse title="Points forts du projet" isOpen={true}>
                     <ul>
                         {project.strengths.map((strength, index) => (
-                            <li key={index}>{strength}</li>
+                            <li key={index}>
+                                <BoldText text={strength} />
+                            </li>
                         ))}
                     </ul>
                 </Collapse>

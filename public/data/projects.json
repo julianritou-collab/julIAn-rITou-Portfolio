@@ -17,12 +17,12 @@
         "strengths": [
             "Excellent projet dans l’ensemble, très complet et sérieux.",
             "Plusieurs bonus réalisés au-delà des attentes.",
-            "Bonne anticipation technique avec la préparation à une future API distante.",
-            "Très bon travail sur l’accessibilité et le SEO",
-            "Strucuredes pages claire et cohérente.",
+            "Bonne **anticipation technique** avec la préparation à une future API distante.",
+            "Très bon travail sur l’**accessibilité** et le **SEO**",
+            "Structure des pages claire et cohérente.",
             "Bonne hiérarchie des titres et organisation globale du contenu.",
-            "Architecture React propre et composants bien découpés",
-            "Projet agréable à parcourir et globalement très professionnel"
+            "Architecture React propre et composants bien découpés.",
+            "Projet agréable à parcourir et globalement **très professionnel**."
         ],
         "improvements": [
             "Respecter encore plus fidèlement la maquette Figma, notamment sur certains dégradés et détails visuels.",
