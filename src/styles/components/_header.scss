@@ -32,8 +32,8 @@
         }
 
         &:focus-visible {
-            outline: 3px solid $primary-line-color;
-            outline-offset: 6px;
+            outline: 2px solid $primary-line-color;
+            outline-offset: 3px;
             border-radius: 4px;
         }
     }
@@ -76,7 +76,7 @@
 
         &:focus-visible {
             outline: 3px solid $primary-line-color;
-            outline-offset: 6px;
+            outline-offset: 3px;
             border-radius: 4px;
         }
 
@@ -125,7 +125,8 @@
 
             &:focus-visible {
                 outline: 2px solid $primary-line-color;
-                outline-offset: 6px;
+                outline-offset: 3px;
+                border-radius: 4px;
             }
 
             &.active {
@@ -193,7 +194,8 @@
 
                 &:focus-visible {
                     outline: 2px solid $primary-line-color;
-                    outline-offset: -2px;
+                    outline-offset: -8px;
+                    border-radius: 4px;
                 }
 
                 &::after {

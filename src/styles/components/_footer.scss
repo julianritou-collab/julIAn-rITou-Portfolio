@@ -28,7 +28,7 @@
         border-radius: 4px;
         justify-self: start;
         &:focus-visible {
-            outline: 3px solid $primary-line-color;
+            outline: 2px solid $primary-line-color;
             outline-offset: 6px;
         }
         @media (max-width: $mobile) {
